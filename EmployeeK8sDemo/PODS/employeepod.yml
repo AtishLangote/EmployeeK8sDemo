@@ -7,6 +7,6 @@ app: web
 spec:
 containers:
 - name: web-ctr
-image: 10542/atishimages:employeek8simg
+image: 10542/employeeimg:employeek8simg
 ports:
 - containerPort: 8085
