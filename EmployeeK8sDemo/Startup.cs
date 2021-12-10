@@ -17,6 +17,7 @@ namespace EmployeeK8sDemo
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -25,6 +26,16 @@ namespace EmployeeK8sDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //services.AddCors(options =>
+            //{
+            //    options.AddDefaultPolicy(
+            //    builder =>
+            //    {
+            //        builder.WithOrigins("https://localhost.8089")
+            //          .AllowAnyHeader()
+            //           .AllowAnyMethod();
+            //    });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +49,13 @@ namespace EmployeeK8sDemo
             app.UseRouting();
 
             app.UseAuthorization();
+            //app.UseCors(builder =>
+            //{
+            //    builder
+            //    .AllowAnyOrigin()
+            //    .AllowAnyMethod()
+            //    .AllowAnyHeader();
+            //});
 
             app.UseEndpoints(endpoints =>
             {
